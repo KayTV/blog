@@ -10,11 +10,18 @@ var swig = require('swig');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
-
+var blogRoutes = require('./routes/blogRoutes.js')
 
 // *** express instance *** //
 var app = express();
 
+// *** Mongoose Connections *** //
+var dbs = {
+  test: 'mongodb://localhost/blog-test',
+  development: 'mongodb://localhost/blog'
+};
+var mongoose = require('mongoose');
+mongoose.connect(dbs[process.env.NODE_ENV]);
 
 // *** view engine *** //
 var swig = new swig.Swig();
@@ -36,6 +43,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/api/', blogRoutes);
 
 
 // catch 404 and forward to error handler
