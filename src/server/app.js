@@ -10,8 +10,8 @@ var swig = require('swig');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
-var blogRoutes = require('./routes/blogRoutes.js')
-
+var blogRoutes = require('./routes/blogRoutes.js');
+var localAuthRoutes = require('./routes/localAuth.js');
 // *** express instance *** //
 var app = express();
 
@@ -44,6 +44,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 // *** main routes *** //
 app.use('/', routes);
 app.use('/api/', blogRoutes);
+app.use('/local/', localAuthRoutes);
 
 
 // catch 404 and forward to error handler
