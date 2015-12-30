@@ -1,3 +1,5 @@
+// FIXME: need to make sure that this is going into test/dev environment
+
 // *** main dependencies *** //
 var express = require('express');
 var path = require('path');
@@ -20,8 +22,10 @@ var dbs = {
   test: 'mongodb://localhost/blog-test',
   development: 'mongodb://localhost/blog'
 };
+console.log('env =', process.env.NODE_ENV);
 var mongoose = require('mongoose');
-mongoose.connect(dbs[process.env.NODE_ENV]);
+// mongoose.connect(dbs[process.env.NODE_ENV]);
+mongoose.connect('mongodb://localhost/blog');
 
 // *** view engine *** //
 var swig = new swig.Swig();

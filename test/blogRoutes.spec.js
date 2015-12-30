@@ -6,7 +6,6 @@ var server = require('../src/server/app');
 var Post = require('../src/server/models/posts');
 var should = chai.should();
 chai.use(chaiHTTP);
-
 describe('Blog Routes', function() {
 
   Post.collection.drop();

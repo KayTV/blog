@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Kaylyn's Blog</a>
+          </div>
+          <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">New Posts</a></li>
+              <li><a href="#">Popular Posts</a></li>
+              <li><a href="#">All Posts</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About Galvanize</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     {% block content %}
     {% endblock %}
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
