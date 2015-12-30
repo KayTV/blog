@@ -59,3 +59,17 @@ a {
 .dropdown-menu li a:hover {
     background-color: red !important;
 }
+
+#p1 {
+  /*#b3d8ff*/
+  background-color: rgba(155, 155, 155, 0.2);
+  height: 480px;
+  width: 900px;
+  text-align: center;
+  margin: auto;
+  overflow: auto;
+}
+
+h2 {
+  color: black;
+}
