@@ -60,16 +60,26 @@ a {
     background-color: red !important;
 }
 
-#p1 {
+.textarea {
   /*#b3d8ff*/
-  background-color: rgba(155, 155, 155, 0.2);
+  background-color: rgba(78, 76, 76, 0.7);
   height: 480px;
   width: 900px;
   text-align: center;
   margin: auto;
   overflow: auto;
+  color: #b3b3b3;
 }
 
 h2 {
-  color: black;
+  color: #0d0d0d;
+  font-weight: bold;
+}
+
+.smallerimg {
+  height: 250px;
+  width: 600px;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+  border-radius: 15px;
 }
