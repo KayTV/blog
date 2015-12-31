@@ -69,6 +69,8 @@ a {
   margin: auto;
   overflow: auto;
   color: #b3b3b3;
+  padding: 3px;
+  border-radius: 10px;
 }
 
 h2 {
