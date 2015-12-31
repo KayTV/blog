@@ -1,0 +1,13 @@
+<h1>Make a New Post</h1>
+
+<form>
+  <div class="form-group">
+    <label for="newPostTitle">Post Title</label>
+    <input id="newPostTitle" type="text" class="form-control" placeholder="My First Post" ng-model="title">
+  </div>
+  <div class="form-group">
+    <label for="newPostInput">Post Text</label>
+    <textarea id="newPostInput" class="form-control" rows="3" placeholder="This week I..." ng-model="post"></textarea>
+  </div>
+  <button class="btn btn-default" ng-click="createPost()">Submit</button>
+</form>

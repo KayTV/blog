@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
@@ -10,22 +11,24 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Kaylyn's Blog</a>
+          <a class="navbar-brand" href="/#/blog">Kaylyn's Blog</a>
         </div>
         <div>
           <ul class="nav navbar-nav">
             <li class="active"><a href="/#/">Home</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">Blog
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/#/blog">Blog
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/#/new">New Posts</a></li>
-                <li><a href="/#/popular">Popular Posts</a></li>
-                <li><a href="/#/all">All Posts</a></li>
+                <!-- FIXME: needs to set a value for sorting -->
+                <li><a href="/#/blog">New Posts</a></li>
+                <li><a href="/#/blog">Popular Posts</a></li>
+                <li><a href="/#/blog">All Posts</a></li>
               </ul>
             </li>
             <li><a href="/#/galvanize">About Galvanize</a></li>
             <li><a href="/#/contact">Contact</a></li>
+            <li><a href="/#/new">New Post</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -46,5 +49,7 @@
     <script type="text/javascript" src="/core/routing.js"></script>
     <script type="text/javascript" src="/core/http.factory.js"></script>
     <script type="text/javascript" src="/features/home/home.controller.js"></script>
+    <script type="text/javascript" src="/features/blog/blog.controller.js"></script>
+    <script type="text/javascript" src="/features/newPost/newPost.controller.js"></script>
   </body>
 </html>

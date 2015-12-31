@@ -4,3 +4,8 @@
   <h4>Written by Kaylyn Van Norstrand</h4>
   <p>Current Galvanize Student</p>
 </div>
+<div ng-repeat="blog in blogPosts">
+  <h3>{{ blog.title }}</h3>
+  <div>{{ blog.post }}</div>
+  <div>{{ blog.createDate }}</div>
+</div>
