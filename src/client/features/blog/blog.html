@@ -4,7 +4,21 @@
   <h4>Written by Kaylyn Van Norstrand</h4>
   <p>Current Galvanize Student</p>
 </div>
-<div ng-repeat="blog in blogPosts">
+
+<!-- FIXME: dropdown for sorting with ng-model=query -->
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Title</a></li>
+    <li><a href="#">Date</a></li>
+    <li><a href="#">Rating</a></li>
+  </ul>
+</div>
+
+<div ng-repeat="blog in blogPosts | orderBy: 'query' ">
   <h3>{{ blog.title }}</h3>
   <div>{{ blog.post }}</div>
   <div>{{ blog.createDate }}</div>
