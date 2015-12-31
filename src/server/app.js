@@ -7,7 +7,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var swig = require('swig');
 
 
 // *** routes *** //
@@ -26,16 +25,6 @@ console.log('env =', process.env.NODE_ENV);
 var mongoose = require('mongoose');
 // mongoose.connect(dbs[process.env.NODE_ENV]);
 mongoose.connect('mongodb://localhost/blog');
-
-// *** view engine *** //
-// var swig = new swig.Swig();
-// app.engine('html', swig.renderFile);
-// app.set('view engine', 'html');
-//
-//
-// // *** static directory *** //
-// app.set('views', path.join(__dirname, 'views'));
-
 
 // *** config middleware *** //
 app.use(logger('dev'));
