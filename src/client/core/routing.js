@@ -8,7 +8,7 @@ angular.module('app', ['ngRoute'])
       })
       .when('/blog', {
         templateUrl: '../features/blog/blog.html',
-        // controller: 'HomeController',
+        controller: 'BlogController',
         access: {restricted: false}
       })
       .when('/contact', {
@@ -19,6 +19,11 @@ angular.module('app', ['ngRoute'])
       .when('/galvanize', {
         templateUrl: '../features/galvanize/galvanize.html',
         // controller: 'HomeController',
+        access: {restricted: false}
+      })
+      .when('/new', {
+        templateUrl: '../features/newPost/newPost.html',
+        controller: 'NewPostController',
         access: {restricted: false}
       })
       .when('/login', {
