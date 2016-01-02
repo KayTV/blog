@@ -85,3 +85,8 @@ h2 {
   filter: grayscale(60%);
   border-radius: 15px;
 }
+
+.dropdown-menu-center {
+  text-align: center;
+  left: 42%;
+}
