@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/#/blog">Kaylyn's Blog</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li ng-class='{active: isActive("/")}'><a href="/#/">Home</a></li>
+        <li ng-class='{active: isActive("/blog")}'><a href="/#/blog">Blog</a></li>
+        <li ng-class='{active: isActive("/galvanize")}'><a href="/#/galvanize">About Galvanize</a></li>
+        <li ng-class='{active: isActive("/contact")}'><a href="/#/contact">Contact</a></li>
+        <li ng-class='{active: isActive("/new")}'><a href="/#/new">New Post</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li>{{ user }}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
