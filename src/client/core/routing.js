@@ -27,7 +27,7 @@ angular.module('app', ['ngRoute'])
         access: {restricted: false}
       })
       .when('/login', {
-        templateUrl: 'auth/partials/login.html',
+        templateUrl: '../components/auth/partials/login.html',
         controller: 'LoginController',
         access: {restricted: false}
       })
@@ -36,7 +36,7 @@ angular.module('app', ['ngRoute'])
         access: {restricted: true}
       })
       .when('/register', {
-        templateUrl: 'auth/partials/register.html',
+        templateUrl: '../components/auth/partials/register.html',
         controller: 'RegisterController',
         access: {restricted: false}
       })
