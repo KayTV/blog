@@ -76,6 +76,7 @@
         $http.post('/local/register', {username: username, password: password})
           // handle success
           .success(function (data, status) {
+            console.log('in AuthFactory success');
             if(status === 200 && data.status){
               login(username, password);
               $rootScope.user = username;
@@ -117,5 +118,5 @@
       }
 
   }]);
-  
+
 })();

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  
+
   angular.module('app')
   .controller('RegisterController', ['$scope', '$location', 'AuthFactory',
     function ($scope, $location, AuthFactory) {
@@ -14,6 +14,7 @@
         AuthFactory.register($scope.registerForm.username, $scope.registerForm.password)
           // handle success
           .then(function () {
+            console.log('successful register');
             $location.path('/');
             $scope.disabled = false;
             $scope.registerForm = {};

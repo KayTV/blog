@@ -1,5 +1,3 @@
-// FIXME: need to make sure that this is going into test/dev environment
-
 // *** main dependencies *** //
 var express = require('express');
 var path = require('path');
@@ -7,7 +5,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+var session = require('express-session');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
@@ -24,13 +24,21 @@ var dbs = {
 console.log('env =', process.env.NODE_ENV);
 var mongoose = require('mongoose');
 // mongoose.connect(dbs[process.env.NODE_ENV]);
-mongoose.connect('mongodb://localhost/blog');
+var mongo_uri = process.env.MONGOLAB_URI || 'mongodb://localhost/blog';
+mongoose.connect(mongo_uri);
 
 // *** config middleware *** //
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, '../client')));
 
 
@@ -39,8 +47,8 @@ app.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../client/', 'layout.html'));
 });
 app.use('/', routes);
-app.use('/api/', blogRoutes);
-app.use('/local/', localAuthRoutes);
+app.use('/api', blogRoutes);
+app.use('/local', localAuthRoutes);
 
 
 // catch 404 and forward to error handler

@@ -14,6 +14,7 @@ router.post('/register', function(req, res) {
                 });
     }
     passport.authenticate('local')(req, res, function () {
+      console.log('SESSION',req.session);
       var user = req.session.passport.user;
       req.login(user, function (err) {
                 if(!err){
