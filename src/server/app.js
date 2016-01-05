@@ -41,6 +41,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, '../client')));
 
+// ** configure passport **//
+var User = require('./models/users');
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // *** main routes *** //
 app.get('/', function(req, res, next) {
