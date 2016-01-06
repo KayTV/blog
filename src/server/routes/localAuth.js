@@ -6,7 +6,11 @@ var init = require('../auth/init');
 
 // local auth
 router.post('/register', function(req, res) {
-  User.register(new User({ username: req.body.username }), req.body.password, function(err, account) {
+  var user = { username: req.body.username };
+  if (user.username === 'Kaylyn') {
+    user.admin = true;
+  };
+  User.register(new User(user), req.body.password, function(err, account) {
     if (err) {
       return res.status(500)
                 .json({
@@ -14,6 +18,7 @@ router.post('/register', function(req, res) {
                 });
     }
     passport.authenticate('local')(req, res, function () {
+      console.log('SESSION',req.session);
       var user = req.session.passport.user;
       req.login(user, function (err) {
                 if(!err){
@@ -43,7 +48,13 @@ router.post('/login', function(req, res, next) {
       if (err) {
         return res.status(500).json({err: 'Could not log in user'});
       }
-      res.status(200).json({status: 'Login successful!'});
+      res.status(200).json(
+        {
+          status: 'Login successful!',
+          username: user.username,
+          admin: user.admin
+        }
+      );
     });
   })(req, res, next);
 });

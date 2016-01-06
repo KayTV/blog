@@ -9,12 +9,15 @@
         <li ng-class='{active: isActive("/blog")}'><a href="/#/blog">Blog</a></li>
         <li ng-class='{active: isActive("/galvanize")}'><a href="/#/galvanize">About Galvanize</a></li>
         <li ng-class='{active: isActive("/contact")}'><a href="/#/contact">Contact</a></li>
-        <li ng-class='{active: isActive("/new")}'><a href="/#/new">New Post</a></li>
+        <li ng-if="isAdmin()" ng-class='{active: isActive("/new")}'><a href="/#/new">New Post</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li>{{ user }}</li>
+        <li ng-if="!isAuthenticated()"><a href="/#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li ng-if="!isAuthenticated()"><a href="/#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-if="isAuthenticated()" ng-controller="LogoutController">
+          <a href="/#/home" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+        </li>
+        <li ng-if="isAuthenticated()"><a>Welcome, {{ user }}</a></li>
       </ul>
     </div>
   </div>

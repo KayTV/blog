@@ -7,10 +7,13 @@
 
       // create user variable
       var user = null;
-
+      var name = null;
+      var admin = null;
       // return available functions for use in controllers
       return ({
         getUserStatus: getUserStatus,
+        getUserName: getUserName,
+        getAdminStatus: getAdminStatus,
         login: login,
         logout: logout,
         register: register,
@@ -25,6 +28,22 @@
         }
       }
 
+      function getUserName() {
+        if(user) {
+          return name;
+        } else {
+          return 'Guest';
+        }
+      }
+
+      function getAdminStatus() {
+        if(user) {
+          return admin;
+        } else {
+          return false;
+        }
+      }
+
       function login(username, password) {
         // create a new instance of deferred
         var deferred = $q.defer();
@@ -33,7 +52,10 @@
           // handle success
           .success(function (data, status) {
             if(status === 200 && data.status){
+              console.log('logged in', data);
               user = true;
+              name = data.username;
+              admin = data.admin;
               deferred.resolve();
             } else {
               user = false;
@@ -57,7 +79,8 @@
           // handle success
           .success(function (data) {
             user = false;
-            $rootScope.user = '';
+            name = '';
+            admin = false;
             deferred.resolve();
           })
           // handle error
@@ -76,9 +99,10 @@
         $http.post('/local/register', {username: username, password: password})
           // handle success
           .success(function (data, status) {
+            console.log('in AuthFactory success');
             if(status === 200 && data.status){
               login(username, password);
-              $rootScope.user = username;
+              user = username;
               deferred.resolve();
             } else {
               deferred.reject();
@@ -117,5 +141,5 @@
       }
 
   }]);
-  
+
 })();

@@ -1,5 +1,6 @@
 angular.module('app', ['ngRoute'])
   .config(function($routeProvider){
+
     $routeProvider
       .when('/', {
         templateUrl: '../features/home/home.html',
@@ -41,4 +42,15 @@ angular.module('app', ['ngRoute'])
         access: {restricted: false}
       })
       .otherwise({redirectTo: '/'});
+  });
+
+  angular.module('app')
+  .run(function ($rootScope, $location, $route, AuthFactory) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+      console.log('next.access', next.access);
+      if (next.access.restricted && !AuthFactory.getUserStatus()) {
+        $location.path('/login');
+        $route.reload();
+      }
+    });
   });
