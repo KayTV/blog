@@ -19,7 +19,8 @@
 </div>
 
 <div ng-repeat="blog in blogPosts | orderBy: 'query' ">
-  <h3>{{ blog.title }}</h3>
-  <div>{{ blog.post }}</div>
-  <div>{{ blog.createDate }}</div>
+  <post title="{{ blog.title }}"
+    body="{{ blog.post }}"
+    time="{{ blog.createDate }}"
+    blog-id="{{ blog._id }}"></post>
 </div>
