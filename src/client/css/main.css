@@ -73,6 +73,19 @@ a {
   border-radius: 10px;
 }
 
+.smalltextarea {
+  /*#b3d8ff*/
+  background-color: rgba(78, 76, 76, 0.7);
+  height: 240px;
+  width: 900px;
+  text-align: center;
+  margin: auto;
+  overflow: auto;
+  color: #b3b3b3;
+  padding: 3px;
+  border-radius: 10px;
+}
+
 h2 {
   color: #0d0d0d;
   font-weight: bold;
