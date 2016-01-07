@@ -6,7 +6,7 @@
 </div>
 
 <!-- FIXME: dropdown for sorting with ng-model=query -->
-<div class="dropdown">
+<!-- <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Sort
     <span class="caret"></span>
@@ -16,7 +16,7 @@
     <li><a>Date</a></li>
     <li><a>Rating</a></li>
   </ul>
-</div>
+</div> -->
 
 <div ng-repeat="blog in blogPosts | orderBy: 'query' ">
   <post title="{{ blog.title }}"

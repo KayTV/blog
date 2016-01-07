@@ -90,3 +90,23 @@ h2 {
   text-align: center;
   left: 42%;
 }
+
+.post {
+  border: solid 5px;
+  border-radius: 15px;
+  margin: 10px auto;
+  border-color: #b3b3b3;
+  background-color: rgba(78, 76, 76, 0.7);
+  width: 50%;
+}
+.title {
+  color: black;
+}
+
+.post-body {
+  color: #b3b3b3;
+}
+
+.post-time {
+
+}
