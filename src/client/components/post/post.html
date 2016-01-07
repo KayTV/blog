@@ -1,9 +1,12 @@
-<div>
-  <h3>{{ vm.title }}</h3>
-</div>
-<div>
-  {{ vm.body }}
-</div>
-<div>
-  {{ vm.time }}
+<div class="post">
+  <div class="title">
+    <!-- FIXME: should be an a tag that links to a feature of the individual post -->
+    <h3>{{ vm.title }}</h3>
+  </div>
+  <div class="post-body">
+    {{ vm.body }}
+  </div>
+  <div class="post-time">
+    posted on: {{vm.time | date:'MM/dd/yyyy @ h:mma'}}
+  </div>
 </div>
