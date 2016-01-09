@@ -18,7 +18,7 @@
   </ul>
 </div> -->
 
-<div ng-repeat="blog in blogPosts | orderBy: 'query' ">
+<div ng-repeat="blog in blogPosts | orderBy : 'query' : 'reverse'">
   <post title="{{ blog.title }}"
     body="{{ blog.post }}"
     time="{{ blog.createDate }}"

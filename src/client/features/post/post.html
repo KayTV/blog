@@ -1,0 +1,5 @@
+<h1> {{ post.title }} </h1>
+<h5>posted on: {{ post.createDate | date:'MM/dd/yyyy @ h:mma' }}</h5>
+<div class="textarea">
+  <div ng-bind-html="post.post"></div>
+</div>
