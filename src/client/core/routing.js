@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'textAngular'])
   .config(function($routeProvider){
 
     $routeProvider
@@ -25,6 +25,11 @@ angular.module('app', ['ngRoute'])
       .when('/new', {
         templateUrl: '../features/newPost/newPost.html',
         controller: 'NewPostController',
+        access: {restricted: true}
+      })
+      .when('/post', {
+        templateUrl: '../features/post/post.html',
+        controller: 'PostController',
         access: {restricted: false}
       })
       .when('/login', {

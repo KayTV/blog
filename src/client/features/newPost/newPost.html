@@ -6,8 +6,8 @@
     <input id="newPostTitle" type="text" class="form-control" placeholder="My First Post" ng-model="title">
   </div>
   <div class="form-group">
-    <label for="newPostInput">Post Text</label>
-    <textarea id="newPostInput" class="form-control" rows="20" placeholder="This week I..." ng-model="post"></textarea>
+    <label>Post Text</label>
+    <div text-angular name="post" ng-model="post" row="20" placeholder="Article Body"></div>
   </div>
   <button class="btn btn-default" ng-click="createPost()">Submit</button>
 </form>

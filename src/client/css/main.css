@@ -20,7 +20,7 @@ a {
     border: 0;
     font-size: 11px !important;
     letter-spacing: 4px;
-    opacity:0.9;
+    opacity:1;
 }
 
 /* Add a gray color to all navbar links */
@@ -118,8 +118,4 @@ h2 {
 
 .post-body {
   color: #b3b3b3;
-}
-
-.post-time {
-
 }

@@ -7,21 +7,26 @@
     return {
       restrict: 'E',
       templateUrl: 'components/post/post.html',
-      controller: postController,
-      controllerAs: 'vm',
-      bindToController: true,
       scope: {
         title: '@',
         body: '@',
         time: '@',
-        blogID: '@'
-      }
+        blogId: '@'
+      },
+      controller: postController,
+      controllerAs: 'vm',
+      bindToController: true
     };
   }
 
-  postController.$inject = [];
+  postController.$inject = ['httpfactory'];
 
-  function postController() {
+  function postController(httpfactory) {
     var vm = this;
+
+    vm.setCurPostId = function() {
+      console.log('BLOG ID:',vm.blogId);
+      httpfactory.setCurPostId(vm.blogId);
+    }
   }
 })();
