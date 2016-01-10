@@ -5,6 +5,7 @@ var Post = new Schema({
   title: {type: String, unique: true},
   createDate: Date,
   post: String,
+  description: String,
   comments: [
     {
       comment: String,

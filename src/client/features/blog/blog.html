@@ -5,22 +5,9 @@
   <p>Current Galvanize Full-Stack Student</p>
 </div>
 
-<!-- FIXME: dropdown for sorting with ng-model=query -->
-<!-- <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Sort
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenu1">
-    <li><a>Title</a></li>
-    <li><a>Date</a></li>
-    <li><a>Rating</a></li>
-  </ul>
-</div> -->
-
 <div ng-repeat="blog in blogPosts | orderBy : 'query' : 'reverse'">
   <post title="{{ blog.title }}"
-    body="{{ blog.post }}"
+    description="{{ blog.description }}"
     time="{{ blog.createDate }}"
     blog-id="{{ blog._id }}"></post>
 </div>
