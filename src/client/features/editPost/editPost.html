@@ -1,0 +1,17 @@
+<h1>Edit Post</h1>
+
+<form>
+  <div class="form-group">
+    <label>Post Title</label>
+    <p>{{ title }}</p>
+  </div>
+  <div class="form-group">
+    <label>Post Text</label>
+    <div text-angular name="post" ng-model="blogPost.post" row="20" placeholder="Article Body"></div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea style="color:black" id="description" ng-model="blogPost.description" rows="3" placeholder="This is about..."></textarea>
+  </div>
+  <button class="btn btn-default" ng-click="editPost()">Submit</button>
+</form>
