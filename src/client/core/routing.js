@@ -14,17 +14,20 @@ angular.module('app', ['ngRoute', 'textAngular'])
       })
       .when('/contact', {
         templateUrl: '../features/contact/contact.html',
-        // controller: 'HomeController',
         access: {restricted: false}
       })
       .when('/galvanize', {
         templateUrl: '../features/galvanize/galvanize.html',
-        // controller: 'HomeController',
         access: {restricted: false}
       })
       .when('/new', {
         templateUrl: '../features/newPost/newPost.html',
         controller: 'NewPostController',
+        access: {restricted: true}
+      })
+      .when('/edit', {
+        templateUrl: '../features/editPost/editPost.html',
+        controller: 'EditController',
         access: {restricted: true}
       })
       .when('/post', {

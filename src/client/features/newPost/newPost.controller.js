@@ -7,7 +7,9 @@
   NewPostController.$inject = ['$scope', 'httpfactory'];
 
   function NewPostController($scope, httpfactory){
+
     $scope.createPost = createPost;
+
     function createPost() {
       var blogPost = {
         title: $scope.title,
@@ -15,7 +17,7 @@
         post: $scope.post,
         description: $scope.description
       };
-      console.log(blogPost);
+
       httpfactory.createPost(blogPost)
         .then(function(response) {
           console.log('successfully created post', response);

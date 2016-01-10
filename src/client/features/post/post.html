@@ -1,3 +1,8 @@
+<div class="pull-right" ng-if="isAdmin()">
+  <a href="/#/edit" class="btn btn-primary">Edit</a>
+  <a href="/#/blog" class="btn btn-danger" ng-click="deletePost()">Delete</a>
+</div>
+
 <h1> {{ post.title }} </h1>
 <h5>posted on: {{ post.createDate | date:'MM/dd/yyyy @ h:mma' }}</h5>
 <div class="textarea">
