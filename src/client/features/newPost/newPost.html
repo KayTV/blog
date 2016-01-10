@@ -2,12 +2,16 @@
 
 <form>
   <div class="form-group">
-    <label for="newPostTitle">Post Title</label>
-    <input id="newPostTitle" type="text" class="form-control" placeholder="My First Post" ng-model="title">
+    <label>Post Title</label>
+    <input type="text" class="form-control" placeholder="My First Post" ng-model="title">
   </div>
   <div class="form-group">
     <label>Post Text</label>
     <div text-angular name="post" ng-model="post" row="20" placeholder="Article Body"></div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea style="color:black" id="description" ng-model="description" rows="3" placeholder="This is about..."></textarea>
   </div>
   <button class="btn btn-default" ng-click="createPost()">Submit</button>
 </form>

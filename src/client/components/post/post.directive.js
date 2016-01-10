@@ -11,6 +11,7 @@
         title: '@',
         body: '@',
         time: '@',
+        description: '@',
         blogId: '@'
       },
       controller: postController,

@@ -8,12 +8,12 @@
 
   function NewPostController($scope, httpfactory){
     $scope.createPost = createPost;
-
     function createPost() {
       var blogPost = {
         title: $scope.title,
         createDate: Date.now(),
-        post: $scope.post
+        post: $scope.post,
+        description: $scope.description
       };
       console.log(blogPost);
       httpfactory.createPost(blogPost)
@@ -24,6 +24,7 @@
         });
       $scope.title='';
       $scope.post='';
+      $scope.description='';
     }
   }
 

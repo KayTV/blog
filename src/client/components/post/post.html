@@ -3,7 +3,8 @@
     <!-- FIXME: should be an a tag that links to a feature of the individual post -->
     <h3><a href="/#/post" ng-click="vm.setCurPostId()">{{ vm.title }}</a></h3>
   </div>
-  <div class="post-body" ng-bind-html="vm.body">
+  <div class="post-body">
+    {{ vm.description }}
   </div>
   <div class="post-time">
     posted on: {{vm.time | date:'MM/dd/yyyy @ h:mma'}}
