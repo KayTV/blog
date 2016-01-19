@@ -5,7 +5,7 @@
   <p>Current Galvanize Full-Stack Student</p>
 </div>
 
-<div ng-repeat="blog in blogPosts | orderBy : 'query' : 'reverse'">
+<div ng-repeat="blog in blogPosts | orderBy : 'createDate' : 'reverse'">
   <post title="{{ blog.title }}"
     description="{{ blog.description }}"
     time="{{ blog.createDate }}"

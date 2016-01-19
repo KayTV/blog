@@ -8,3 +8,17 @@
 <div class="textarea">
   <div ng-bind-html="post.post"></div>
 </div>
+
+<div>
+  <div ng-repeat="comment in post.comments" class="comment">
+    <div>{{ comment.comment }}</div>
+    <div>By: {{ comment.author }}</div>
+    <div>On: {{ comment.createDate | date:'MM/dd/yyyy @ h:mma' }}</div>
+  </div>
+</div>
+
+<div ng-if="isAuthenticated()">
+  <textarea style="color:black" ng-model="$parent.newComment" placeholder="New comment..."
+    rows="5" cols="30"></textarea><br>
+  <button ng-click="addComment()" class="btn btn-default">Comment</button>
+</div>

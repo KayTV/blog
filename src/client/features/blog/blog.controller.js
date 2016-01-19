@@ -12,8 +12,8 @@
     function activate() {
       httpfactory.getAllPosts()
         .then(function(response) {
+          console.log(response);
           $scope.blogPosts = response.data;
-          console.log($scope.blogPosts);
         })
         .catch(function(err) {
           console.log('error getting all posts', err);

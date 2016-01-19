@@ -119,3 +119,17 @@ h2 {
 .post-body {
   color: #b3b3b3;
 }
+
+.comment {
+  border: solid 5px;
+  border-radius: 15px;
+  margin: 10px auto;
+  border-color: #b3b3b3;
+  background-color: rgba(78, 76, 76, 0.7);
+  width: 50%;
+}
+
+.comment div:nth-child(1) {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

@@ -16,10 +16,16 @@
     });
 
     $scope.isAdmin = isAdmin;
+    $scope.isAuthenticated = isAuthenticated;
     $scope.deletePost = deletePost;
+    $scope.addComment = addComment;
 
     function isAdmin() {
       return AuthFactory.getAdminStatus();
+    }
+
+    function isAuthenticated() {
+      return AuthFactory.getUserStatus();
     }
 
     function deletePost() {
@@ -29,6 +35,20 @@
         })
         .catch(function(err) {
           console.log('Wasn\'t deleted.', err);
+        })
+    }
+
+    function addComment() {
+      console.log('COMMENT', $scope.newComment);
+      $scope.post.comments.push({
+        comment: $scope.newComment,
+        createDate: Date.now(),
+        author: AuthFactory.getUserName()
+      });
+      httpfactory.updatePost($scope.post)
+        .then( function(response) {
+          $scope.newComment = '';
+          console.log('updated post comment', response);
         })
     }
   }
