@@ -10,8 +10,17 @@
       and I have little to no experience in this type of field.
       I was previously working as a paralegal for over three years in many different
       firms and it was kind of horrible to the point that I knew I couldn't stay
-      in that field for one more day. This is my story of starting with no expierence
+      in that field for one more day. This is my story of starting with no experience
       in coding and how I learned while going through the full stack development program
       at Galvanize.</p>
-
+</div>
+<div class="container">
+  <div ng-repeat="blog in blogPosts" class="col-xs-4">
+    <post
+      title="{{ blog.title }}"
+      description="{{ blog.description }}"
+      time="{{ blog.createDate }}"
+      blog-id="{{ blog._id }}">
+    </post>
+  </div>
 </div>
