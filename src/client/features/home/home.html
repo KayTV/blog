@@ -15,8 +15,9 @@
       at Galvanize.</p>
 </div>
 <div class="container">
+  <br/><br/>
   <div ng-repeat="blog in blogPosts" class="col-xs-4">
-    <post
+    <post class="home-post"
       title="{{ blog.title }}"
       description="{{ blog.description }}"
       time="{{ blog.createDate }}"

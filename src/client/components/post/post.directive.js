@@ -16,7 +16,8 @@
       },
       controller: postController,
       controllerAs: 'vm',
-      bindToController: true
+      bindToController: true,
+      replace: true
     };
   }
 
