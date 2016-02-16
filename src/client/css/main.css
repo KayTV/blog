@@ -133,3 +133,12 @@ h2 {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+.home-post {
+  min-height: 100px;
+  border: solid 5px;
+  border-radius: 15px;
+  margin: 10px auto;
+  border-color: #b3b3b3;
+  background-color: rgba(78, 76, 76, 0.7);
+}

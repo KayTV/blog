@@ -6,7 +6,8 @@
 </div>
 
 <div ng-repeat="blog in blogPosts | orderBy : 'createDate' : 'reverse'">
-  <post title="{{ blog.title }}"
+  <post class="post"
+    title="{{ blog.title }}"
     description="{{ blog.description }}"
     time="{{ blog.createDate }}"
     blog-id="{{ blog._id }}"></post>
