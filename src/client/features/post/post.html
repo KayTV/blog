@@ -17,8 +17,9 @@
   </div>
 </div>
 
-<div ng-if="isAuthenticated()">
+<div>
   <textarea style="color:black" ng-model="$parent.newComment" placeholder="New comment..."
     rows="5" cols="30"></textarea><br>
+  <input style="color:black" ng-model="author" placeholder="Insert name">
   <button ng-click="addComment()" class="btn btn-default">Comment</button>
 </div>

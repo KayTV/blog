@@ -43,7 +43,7 @@
       $scope.post.comments.push({
         comment: $scope.newComment,
         createDate: Date.now(),
-        author: AuthFactory.getUserName()
+        author: $scope.author
       });
       httpfactory.updatePost($scope.post)
         .then( function(response) {

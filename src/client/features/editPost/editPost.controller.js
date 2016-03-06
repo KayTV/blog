@@ -3,9 +3,9 @@
 
   angular.module('app').controller('EditController', EditController);
 
-  EditController.$inject = ['$scope', 'httpfactory'];
+  EditController.$inject = ['$scope', 'httpfactory', '$location'];
 
-  function EditController($scope, httpfactory) {
+  function EditController($scope, httpfactory, $location) {
     var postId = httpfactory.getCurPostId();
     httpfactory.getPost(postId)
       .then(function(response) {
@@ -19,6 +19,7 @@
       httpfactory.updatePost($scope.blogPost)
         .then(function(response) {
           console.log('successfully updated');
+          $location.path('/blog');
         })
         .catch(function(err) {
           console.log('error updating', err);
