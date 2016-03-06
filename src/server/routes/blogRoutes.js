@@ -8,7 +8,6 @@ router.post('/post', createPost);
 router.put('/post', updatePost);
 router.delete('/post/:id', deletePost);
 
-
 module.exports = router;
 
 function getAllPosts(req, res) {
